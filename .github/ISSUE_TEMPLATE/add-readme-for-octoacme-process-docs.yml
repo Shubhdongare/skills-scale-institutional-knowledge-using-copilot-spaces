@@ -1,0 +1,76 @@
+name: "Add Content to Project Management Process Docs"
+description: "Request to add README for OctoAcme Project Management Docs with project management overview and links to all docs."
+title: "[Process Doc Update]: Add README, project management processes summary, and links to all docs in docs folder"
+labels: ["documentation", "process improvement"]
+body:
+  - type: dropdown
+    id: process_doc
+    attributes:
+      label: "Which process document do you want to update? (If this is a new document, select '<new document>')"
+      description: "Select the program management process document you want to add content to. If this is a new process doc, choose '<new document>'."
+      options:
+        - octoacme-project-management-overview.md
+        - octoacme-project-initiation.md
+        - octoacme-project-planning.md
+        - octoacme-execution-and-tracking.md
+        - octoacme-risks-and-communication.md
+        - octoacme-release-and-deployment.md
+        - octoacme-retrospective-and-continuous-improvement.md
+        - octoacme-roles-and-personas.md
+        - <new document>
+    validations:
+      required: true
+
+  - type: textarea
+    id: content_summary
+    attributes:
+      label: "Summary of New Content"
+      description: "Briefly describe the new content or update you want to add."
+      placeholder: "E.g., Add README for project management docs with overview and links to all sections."
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Why is this update needed?"
+      description: "Explain the reason for this addition. Is it to address a gap, improve clarity, incorporate a best practice, etc.?"
+      placeholder: "E.g., Central entrypoint for all docs and onboarding new team members."
+    validations:
+      required: true
+
+  - type: textarea
+    id: example_content
+    attributes:
+      label: "Suggested Content (optional)"
+      description: "Paste the proposed new README.md content with section links and management summary. (Optional)"
+      placeholder: |
+        # OctoAcme Project Management Docs
+
+        ## Summary
+        OctoAcme uses a lifecycle-based, iterative project management approach, prioritizing clear ownership, risk management, and data-driven improvements. This repo centralizes key process docs and checklists for standard, transparent delivery:
+        - Customer-first
+        - Iterative delivery
+        - Clear roles (Project Manager, Product Lead, Developers, QA)
+        - Risk escalation paths
+        - Retrospectives and continuous improvement
+
+        ## Docs
+        - [Project Management Overview](./octoacme-project-management-overview.md)
+        - [Project Initiation Guide](./octoacme-project-initiation.md)
+        - [Project Planning](./octoacme-project-planning.md)
+        - [Execution & Tracking](./octoacme-execution-and-tracking.md)
+        - [Risk Management & Communication](./octoacme-risks-and-communication.md)
+        - [Release & Deployment Guide](./octoacme-release-and-deployment.md)
+        - [Retrospective & Continuous Improvement](./octoacme-retrospective-and-continuous-improvement.md)
+        - [Roles and Personas](./octoacme-roles-and-personas.md)
+
+  - type: checkboxes
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "Check all that apply:"
+      options:
+        - label: "Content aligns with existing process docs"
+        - label: "Update improves clarity or closes a documented gap"
+        - label: "Proposed content has been reviewed with stakeholders (if needed)"
